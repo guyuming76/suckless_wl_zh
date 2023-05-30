@@ -1,0 +1,14 @@
+BDEPEND=dev-libs/wayland-protocols dev-util/wayland-scanner virtual/pkgconfig >=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=configure install postinst prepare unpack
+DEPEND=dev-libs/libinput:= dev-libs/wayland gui-libs/wlroots:0/16[X(-)?] x11-libs/libxkbcommon X? ( x11-libs/libxcb:= x11-libs/xcb-util-wm )
+DESCRIPTION=DWL with fcitx5 support
+EAPI=8
+HOMEPAGE=https://gitee.com/guyuming76/dwl/
+INHERIT=flag-o-matic savedconfig toolchain-funcs git-r3
+IUSE=X savedconfig
+LICENSE=CC0-1.0 GPL-3 MIT
+PROPERTIES=live
+RDEPEND=dev-libs/libinput:= dev-libs/wayland gui-libs/wlroots:0/16[X(-)?] x11-libs/libxkbcommon X? ( x11-libs/libxcb:= x11-libs/xcb-util-wm )
+SLOT=0
+_eclasses_=toolchain-funcs	14a8ae365191b518fad51caad7a08f3e	multilib	d1408425c7c4a7669b9b17735404b693	flag-o-matic	514815b1cc0dd4aeac177c2e812b3b1a	portability	964493f201f557a5c6baccacccf45ee2	savedconfig	8b5f9d995a970e49cd427c55d5840285	git-r3	27e13c09a4c7e4c78ac812f74727e676
+_md5_=bc7f958a2ca88b80f5b597807f295de4
