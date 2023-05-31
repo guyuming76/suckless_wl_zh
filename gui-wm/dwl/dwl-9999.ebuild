@@ -56,7 +56,6 @@ src_install() {
 	default
 
 	insinto /usr/share/wayland-sessions
-	doins "${FILESDIR}"/dwl.desktop
 
 	save_config config.h
 }
