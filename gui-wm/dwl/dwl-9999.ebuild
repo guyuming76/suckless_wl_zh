@@ -16,7 +16,7 @@ HOMEPAGE="https://gitee.com/guyuming76/dwl/"
 
 LICENSE="CC0-1.0 GPL-3 MIT"
 SLOT="0"
-IUSE="X"
+IUSE="X +waybar"
 
 RDEPEND="
 	dev-libs/libinput:=
@@ -26,6 +26,9 @@ RDEPEND="
 	X? (
 		x11-libs/libxcb:=
 		x11-libs/xcb-util-wm
+	)
+	waybar? (
+		gui-apps/waybar
 	)
 "
 DEPEND="${RDEPEND}"
@@ -55,7 +58,12 @@ src_configure() {
 src_install() {
 	default
 
-	insinto /usr/share/wayland-sessions
+	insinto /usr/bin
+# -rwxr_xr_x
+        insopts -m0755
+                doins xdg_run_user
+		doins dwl.sh
+		doins dwlstart.sh
 
 	save_config config.h
 }
