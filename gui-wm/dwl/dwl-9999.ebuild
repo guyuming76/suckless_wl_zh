@@ -16,7 +16,7 @@ HOMEPAGE="https://gitee.com/guyuming76/dwl/"
 
 LICENSE="CC0-1.0 GPL-3 MIT"
 SLOT="0"
-IUSE="X +waybar +foot +bemenu +grim +imv +mpv wf-recorder +wl-clipboard"
+IUSE="X +waybar +foot +bemenu +fcitx +grim +imv +mpv wf-recorder +wl-clipboard"
 
 RDEPEND="
 	dev-libs/libinput:=
@@ -50,6 +50,13 @@ RDEPEND="
 	)
 	wl-clipboard? (
 		gui-apps/wl-clipboard
+	)
+	fcitx? (
+		app-i18n/fcitx:5
+		app-i18n/fcitx-chinese-addons:5
+		app-i18n/fcitx-configtool:5
+		app-i18n/fcitx-gtk:5
+		app-i18n/fcitx-qt:5
 	)
 "
 DEPEND="${RDEPEND}"
