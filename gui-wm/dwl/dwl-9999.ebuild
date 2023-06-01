@@ -88,6 +88,7 @@ src_install() {
         if use waybar; then
 		doins waybar/waybar-dwl.sh
 		doins waybar/dwlstart.sh
+		doins waybar/sleep.sh
 
 		insinto /etc/xdg/waybar
 		insopts -m0644
