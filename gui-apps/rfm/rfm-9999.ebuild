@@ -30,7 +30,6 @@ src_prepare() {
 	default
 }
 
-
 src_install() {
 	default
 
@@ -42,10 +41,10 @@ src_install() {
 }
 
 pkg_postinst() {
-	desktop_database_update
+	update-desktop-database
 }
 
 
 pkg_postrm() {
-	desktop_database_update
+	update-desktop-database
 }
