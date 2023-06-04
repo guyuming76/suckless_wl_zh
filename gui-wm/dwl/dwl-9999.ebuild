@@ -35,6 +35,7 @@ RDEPEND="
 	)
 	waybar? (
 		gui-apps/waybar
+		sys-fs/inotify-tools
 	)
 	grim? (
 		gui-apps/grim
