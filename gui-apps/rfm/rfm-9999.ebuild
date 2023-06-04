@@ -30,6 +30,10 @@ src_prepare() {
 	default
 }
 
+src_configure() {
+        sed -i "s:/local::g" config.mk || die
+}
+
 src_install() {
 	default
 
@@ -43,7 +47,6 @@ src_install() {
 pkg_postinst() {
 	update-desktop-database
 }
-
 
 pkg_postrm() {
 	update-desktop-database
