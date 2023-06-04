@@ -36,6 +36,7 @@ RDEPEND="
 	waybar? (
 		gui-apps/waybar
 		sys-fs/inotify-tools
+		gui-apps/wtype
 	)
 	grim? (
 		gui-apps/grim
@@ -63,6 +64,9 @@ RDEPEND="
 		gui-apps/rfm
 	)
 "
+# gui-apps/wtype::guru
+# fcitx:5::gentoo-zh
+
 DEPEND="${RDEPEND}"
 BDEPEND="
 	dev-libs/wayland-protocols
