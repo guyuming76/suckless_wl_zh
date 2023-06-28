@@ -97,11 +97,11 @@ src_install() {
 
 	insinto /usr/bin
 # -rwxr_xr_x
-        insopts -m0755
-                doins xdg_run_user
+	insopts -m0755
+		doins xdg_run_user
 		doins dwl.sh
 
-        if use waybar; then
+	if use waybar; then
 		doins waybar/waybar-dwl.sh
 		doins waybar/dwlstart.sh
 		doins waybar/sleep.sh
