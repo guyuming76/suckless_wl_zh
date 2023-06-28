@@ -15,9 +15,16 @@ HOMEPAGE="https://gitee.com/guyuming76/rfm/"
 
 LICENSE="MIT"
 SLOT="0"
-IUSE="+alacritty "
+IUSE="+alacritty +tig +wayland"
 
-RDEPEND=""
+RDEPEND="
+	alacritty? (
+		x11-terms/alacritty[wayland?]
+	)
+	tig? (
+		dev-vcs/tig
+	)
+"
 DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/pkgconfig
@@ -31,7 +38,7 @@ src_prepare() {
 }
 
 src_configure() {
-        sed -i "s:/local::g" config.mk || die
+	sed -i "s:/local::g" config.mk || die
 }
 
 src_install() {
