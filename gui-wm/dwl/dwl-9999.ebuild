@@ -56,9 +56,7 @@ RDEPEND="
 	fcitx? (
 		app-i18n/fcitx:5
 		app-i18n/fcitx-chinese-addons:5
-		app-i18n/fcitx-configtool:5
 		app-i18n/fcitx-gtk:5
-		app-i18n/fcitx-qt:5
 		media-fonts/wqy-zenhei
 	)
 	rfm? (
