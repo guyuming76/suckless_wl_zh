@@ -8,7 +8,6 @@ inherit flag-o-matic savedconfig toolchain-funcs
 if [[ ${PV} == *9999 ]]; then
 	EGIT_REPO_URI="https://gitee.com/guyuming76/dwl"
 	inherit git-r3
-	WLROOTS_SLOT="0/16"
 fi
 
 DESCRIPTION="DWL with fcitx5 support"
@@ -21,7 +20,7 @@ IUSE="X +waybar +foot +bemenu +fcitx +grim +imv +mpv +rfm wf-recorder +wl-clipbo
 RDEPEND="
 	dev-libs/libinput:=
 	dev-libs/wayland
-	gui-libs/wlroots:${WLROOTS_SLOT}[X(-)?]
+	gui-libs/wlroots[X(-)?]
 	x11-libs/libxkbcommon
 	X? (
 		x11-libs/libxcb:=
