@@ -6,6 +6,9 @@ EAPI=8
 inherit flag-o-matic savedconfig toolchain-funcs git-r3
 
 EGIT_REPO_URI="https://gitee.com/guyuming76/dwl"
+EGIT_BRANCH="V0.4"
+WLROOTS_SLOT="0/16"
+
 
 DESCRIPTION="DWL with fcitx5 support"
 HOMEPAGE="https://gitee.com/guyuming76/dwl/"
@@ -17,7 +20,7 @@ IUSE="X +waybar +foot +bemenu +fcitx +grim +imv +mpv +rfm wf-recorder +wl-clipbo
 RDEPEND="
 	dev-libs/libinput:=
 	dev-libs/wayland
-	gui-libs/wlroots[X(-)?]
+	gui-libs/wlroots:${WLROOTS_SLOT}[X(-)?]
 	x11-libs/libxkbcommon
 	X? (
 		x11-libs/libxcb:=
@@ -30,13 +33,12 @@ RDEPEND="
 		gui-apps/foot
 	)
 	waybar? (
-		gui-apps/waybar
+		<=gui-apps/waybar-0.9.17-r2
 		sys-fs/inotify-tools
 		gui-apps/wtype
 	)
 	grim? (
 		gui-apps/grim
-		gui-apps/slurp
 	)
 	imv? (
 		media-gfx/imv
@@ -62,6 +64,7 @@ RDEPEND="
 "
 # gui-apps/wtype::guru
 # fcitx:5::gentoo-zh
+# waybar 的版本,我用过 gui-apps/waybar-0.9.17-r2, 0.9.17, 0.9.12, 0.9.9
 
 DEPEND="${RDEPEND}"
 BDEPEND="
@@ -95,7 +98,6 @@ src_install() {
 	insopts -m0755
 		doins xdg_run_user
 		doins dwl.sh
-		doins screenshot.sh
 
 	if use waybar; then
 		doins waybar/waybar-dwl.sh

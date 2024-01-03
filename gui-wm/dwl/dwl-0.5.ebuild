@@ -6,6 +6,8 @@ EAPI=8
 inherit flag-o-matic savedconfig toolchain-funcs git-r3
 
 EGIT_REPO_URI="https://gitee.com/guyuming76/dwl"
+EGIT_BRANCH="V0.5cn"
+WLROOTS_SLOT="0/17"
 
 DESCRIPTION="DWL with fcitx5 support"
 HOMEPAGE="https://gitee.com/guyuming76/dwl/"
@@ -17,7 +19,7 @@ IUSE="X +waybar +foot +bemenu +fcitx +grim +imv +mpv +rfm wf-recorder +wl-clipbo
 RDEPEND="
 	dev-libs/libinput:=
 	dev-libs/wayland
-	gui-libs/wlroots[X(-)?]
+	gui-libs/wlroots:${WLROOTS_SLOT}[X(-)?]
 	x11-libs/libxkbcommon
 	X? (
 		x11-libs/libxcb:=
@@ -30,13 +32,12 @@ RDEPEND="
 		gui-apps/foot
 	)
 	waybar? (
-		gui-apps/waybar
+		=gui-apps/waybar-0.9.22
 		sys-fs/inotify-tools
 		gui-apps/wtype
 	)
 	grim? (
 		gui-apps/grim
-		gui-apps/slurp
 	)
 	imv? (
 		media-gfx/imv
@@ -95,7 +96,6 @@ src_install() {
 	insopts -m0755
 		doins xdg_run_user
 		doins dwl.sh
-		doins screenshot.sh
 
 	if use waybar; then
 		doins waybar/waybar-dwl.sh
