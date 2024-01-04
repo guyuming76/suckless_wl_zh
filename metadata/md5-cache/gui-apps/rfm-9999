@@ -10,5 +10,5 @@ LICENSE=MIT
 PROPERTIES=live
 RDEPEND=alacritty? ( x11-terms/alacritty[wayland?] ) tig? ( dev-vcs/tig )
 SLOT=0
-_eclasses_=toolchain-funcs	37a4612ce5522df5a100359a8dbc8491	multilib	5ca4e49abed8e3a2f7b56920eadee157	flag-o-matic	69394e25812406faa1f90edaf4969395	portability	58227860123d3e8da23290064ce3373e	savedconfig	4011d8d7370446e970e2c92b20a31341	git-r3	2347f8fe2d392b2a091191f94be37e6f
-_md5_=c28fac650a36980161de312f31bbab45
+_eclasses_=toolchain-funcs	eed10cf5e5a06916e654d31f5a1925cc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	c816c598969cbaf38cc02d2496ad2e98	portability	a74d533f258f1f435be71312558c12f9	savedconfig	8b5f9d995a970e49cd427c55d5840285	git-r3	86fa1f157b70b9d2ff340c4633b1cf4b
+_md5_=24c78bb4bd1ca1da399f093cfa3b2601
