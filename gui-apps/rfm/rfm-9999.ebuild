@@ -24,6 +24,7 @@ RDEPEND="
 	tig? (
 		dev-vcs/tig
 	)
+	>=dev-libs/glib-2.74
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
