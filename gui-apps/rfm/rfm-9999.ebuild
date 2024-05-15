@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit flag-o-matic savedconfig toolchain-funcs
+inherit savedconfig
 
 if [[ ${PV} == *9999 ]]; then
 	EGIT_REPO_URI="https://gitee.com/guyuming76/rfm"
@@ -15,15 +15,8 @@ HOMEPAGE="https://gitee.com/guyuming76/rfm/"
 
 LICENSE="MIT"
 SLOT="0"
-IUSE="-alacritty -tig +wayland"
 
 RDEPEND="
-	alacritty? (
-		x11-terms/alacritty[wayland?]
-	)
-	tig? (
-		dev-vcs/tig
-	)
 	>=dev-libs/glib-2.74
 "
 DEPEND="${RDEPEND}"

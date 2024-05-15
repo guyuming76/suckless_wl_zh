@@ -1,14 +1,14 @@
 BDEPEND=virtual/pkgconfig x11-libs/gtk+:3 >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=configure install postinst postrm prepare unpack
-DEPEND=alacritty? ( x11-terms/alacritty[wayland?] ) tig? ( dev-vcs/tig )
+DEPEND=>=dev-libs/glib-2.74
 DESCRIPTION=suckless style file manager
 EAPI=8
 HOMEPAGE=https://gitee.com/guyuming76/rfm/
-INHERIT=flag-o-matic savedconfig toolchain-funcs git-r3
-IUSE=+alacritty +tig +wayland savedconfig
+INHERIT=savedconfig git-r3
+IUSE=savedconfig
 LICENSE=MIT
 PROPERTIES=live
-RDEPEND=alacritty? ( x11-terms/alacritty[wayland?] ) tig? ( dev-vcs/tig )
+RDEPEND=>=dev-libs/glib-2.74
 SLOT=0
-_eclasses_=toolchain-funcs	eed10cf5e5a06916e654d31f5a1925cc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	c816c598969cbaf38cc02d2496ad2e98	portability	a74d533f258f1f435be71312558c12f9	savedconfig	8b5f9d995a970e49cd427c55d5840285	git-r3	86fa1f157b70b9d2ff340c4633b1cf4b
-_md5_=24c78bb4bd1ca1da399f093cfa3b2601
+_eclasses_=portability	225656ad6c6594fe3b0187bdd50707fb	savedconfig	8b5f9d995a970e49cd427c55d5840285	git-r3	fbb2889c81f3a05910c1524db69425c1
+_md5_=25666cd13a523799f87ef939122594cb
