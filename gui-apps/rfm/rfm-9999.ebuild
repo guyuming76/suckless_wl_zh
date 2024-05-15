@@ -15,7 +15,7 @@ HOMEPAGE="https://gitee.com/guyuming76/rfm/"
 
 LICENSE="MIT"
 SLOT="0"
-IUSE="+alacritty +tig +wayland"
+IUSE="-alacritty -tig +wayland"
 
 RDEPEND="
 	alacritty? (
