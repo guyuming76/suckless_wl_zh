@@ -36,6 +36,7 @@ src_configure() {
 }
 
 src_install() {
+	export CalledByEbuild="YES"
 	default
 
 	save_config config.h
