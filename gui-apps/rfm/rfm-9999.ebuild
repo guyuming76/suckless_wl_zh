@@ -40,15 +40,5 @@ src_install() {
 
 	save_config config.h
 
-	insinto /usr/share/applications
-	doins rfm.desktop
-
 }
 
-pkg_postinst() {
-	update-desktop-database
-}
-
-pkg_postrm() {
-	update-desktop-database
-}

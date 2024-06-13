@@ -1,5 +1,5 @@
 BDEPEND=virtual/pkgconfig x11-libs/gtk+:3 >=dev-vcs/git-1.8.2.1[curl]
-DEFINED_PHASES=configure install postinst postrm prepare unpack
+DEFINED_PHASES=configure install postinst prepare unpack
 DEPEND=>=dev-libs/glib-2.74
 DESCRIPTION=suckless style file manager
 EAPI=8
@@ -11,4 +11,4 @@ PROPERTIES=live
 RDEPEND=>=dev-libs/glib-2.74
 SLOT=0
 _eclasses_=portability	225656ad6c6594fe3b0187bdd50707fb	savedconfig	8b5f9d995a970e49cd427c55d5840285	git-r3	fbb2889c81f3a05910c1524db69425c1
-_md5_=25666cd13a523799f87ef939122594cb
+_md5_=f34e419a65b1944e5fc51b963ae8d794
