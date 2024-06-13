@@ -5,10 +5,10 @@ DESCRIPTION=DWL with fcitx5 support
 EAPI=8
 HOMEPAGE=https://gitee.com/guyuming76/dwl/
 INHERIT=flag-o-matic savedconfig toolchain-funcs git-r3
-IUSE=X -waybar +foot +bemenu +fcitx +grim +imv +mpv +rfm wf-recorder +wl-clipboard savedconfig
+IUSE=X waybar +foot +bemenu +fcitx +grim +imv +mpv +rfm wf-recorder +wl-clipboard savedconfig
 LICENSE=CC0-1.0 GPL-3 MIT
 PROPERTIES=live
 RDEPEND=dev-libs/libinput:= dev-libs/wayland gui-libs/wlroots[X(-)?] x11-libs/libxkbcommon X? ( x11-libs/libxcb:= x11-libs/xcb-util-wm ) bemenu? ( dev-libs/bemenu ) foot? ( gui-apps/foot ) waybar? ( gui-apps/waybar sys-fs/inotify-tools gui-apps/wtype ) grim? ( gui-apps/grim gui-apps/slurp ) imv? ( media-gfx/imv ) mpv? ( media-video/mpv ) wf-recorder? ( gui-apps/wf-recorder ) wl-clipboard? ( gui-apps/wl-clipboard ) fcitx? ( app-i18n/fcitx:5 app-i18n/fcitx-chinese-addons:5 app-i18n/fcitx-gtk:5 media-fonts/wqy-zenhei ) rfm? ( gui-apps/rfm )
 SLOT=0
 _eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	d309b9713dfc18e754cba88d3ba69653	portability	225656ad6c6594fe3b0187bdd50707fb	savedconfig	8b5f9d995a970e49cd427c55d5840285	git-r3	fbb2889c81f3a05910c1524db69425c1
-_md5_=536831c4da721e2f24595ae02a0f28ff
+_md5_=41de914b34649a2a4b4dee42e22590f6
