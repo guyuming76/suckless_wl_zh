@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM 'https://www.gentoo.org/dtd/metadata.dtd'>
+<pkgmetadata>
+	<maintainer type="person">
+		<email>gu_yu_ming@139.com</email>
+	</maintainer>
+	<use>
+		<flag name="X">build with xwayland</flag>
+		<flag name="waybar">install waybar</flag>
+		<flag name="foot">install foot terminal emulator</flag>
+		<flag name="bemenu">install bemenu</flag>
+		<flag name="fcitx">install fcitx for Chinese input</flag>
+		<flag name="grim">install grim for screenshot</flag>
+		<flag name="imv">install imv as image viewer</flag>
+		<flag name="mpv">install mpv as video player</flag>
+		<flag name="rfm">install rfm as file manager</flag>
+		<flag name="wf-recorder">install wf-recorder as screen recorder</flag>
+		<flag name="wl-clipboard">install wl-clipboard</flag>
+	</use>
+</pkgmetadata>
