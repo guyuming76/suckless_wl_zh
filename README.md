@@ -32,6 +32,10 @@ root #pkgdev manifest
 root #pkgcheck scan 
 ```
 
+# ebuild 说明 #
+1. 引用的 gui-apps/wtype 包存在于 guru 第三方仓库中, 非gentoo官方仓库.
+2. 早期我使用 gui-apps/waybar 配合dwl, 现在已经不用了, 所以对 waybar 依赖的版本一直没更新. 安装时注意 -waybar USE flag就可以了.
+
 ## 参考文档 ##
 
 https://wiki.gentoo.org/wiki/Creating_an_ebuild_repository
