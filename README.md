@@ -5,9 +5,20 @@
 
 从上面[PR文件改动](https://github.com/gentoo/api-gentoo-org/pull/641/files) 可以看出,
 
-gentoo 读取[github上的仓库](https://github.com/guyuming76/suckless_wl_zh), 也就是说如果希望修改对gentoo `emerge --sync suckless_wl_zh` 命令可见,需要把改动commit到 github 仓库.
+gentoo 读取[github上的仓库](https://github.com/guyuming76/suckless_wl_zh), 也就是说如果希望修改对 `emerge --sync suckless_wl_zh` 命令可见,需要把改动commit到 github 仓库.
 
 运行上面 sync 命令会发现, gentoo 实际上是读取[它做的镜像仓库](https://github.com/gentoo-mirror/suckless_wl_zh.git)
+
+# 使用方法 #
+使用下面命令获取仓库编号:
+```
+eselect repository list |grep suckless_wl_zh
+```
+然后激活并同步:
+```
+eselect repository enable 上面获取的编号
+emerge --sync suckless_wl_zh
+```
 
 但我有时发现github从国内访问不稳定,反复尝试很久才能连上同步成功. 这时,不妨尝试手工从gitee上clone到本地:
 ```
