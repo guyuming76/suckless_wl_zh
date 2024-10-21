@@ -14,6 +14,7 @@ HOMEPAGE="https://gitee.com/guyuming76/dwl/"
 
 LICENSE="CC0-1.0 GPL-3 MIT"
 SLOT="0"
+KEYWORDS="amd64"
 IUSE="X waybar +foot +bemenu +fcitx +grim +imv +mpv +rfm wf-recorder +wl-clipboard"
 
 RDEPEND="

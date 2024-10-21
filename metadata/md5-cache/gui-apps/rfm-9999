@@ -6,9 +6,10 @@ EAPI=8
 HOMEPAGE=https://gitee.com/guyuming76/rfm/
 INHERIT=savedconfig git-r3
 IUSE=savedconfig
+KEYWORDS=amd64
 LICENSE=MIT
 PROPERTIES=live
 RDEPEND=>=dev-libs/glib-2.74
 SLOT=0
-_eclasses_=portability	225656ad6c6594fe3b0187bdd50707fb	savedconfig	8b5f9d995a970e49cd427c55d5840285	git-r3	fbb2889c81f3a05910c1524db69425c1
-_md5_=ef0ab407b4a595929423d40b16c0dad2
+_eclasses_=portability	01f478fa22185b3606f2d4adea4675ed	savedconfig	b9131abe556ad2ea96c01b06d658d363	git-r3	875eb471682d3e1f18da124be97dcc81
+_md5_=67889b44a419edd91000bc8b6b6ad7d6

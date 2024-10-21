@@ -12,7 +12,7 @@ fi
 
 DESCRIPTION="suckless style file manager"
 HOMEPAGE="https://gitee.com/guyuming76/rfm/"
-
+KEYWORDS="amd64"
 LICENSE="MIT"
 SLOT="0"
 EGIT_SUBMODULES=()
