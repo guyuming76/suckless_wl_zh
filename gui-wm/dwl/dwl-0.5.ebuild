@@ -101,6 +101,7 @@ src_install() {
 	insopts -m0755
 		doins xdg_run_user
 		doins dwl.sh
+		doins screenshot.sh
 
 	if use waybar; then
 		doins waybar/waybar-dwl.sh
