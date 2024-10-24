@@ -15,7 +15,7 @@ HOMEPAGE="https://gitee.com/guyuming76/dwl/"
 LICENSE="CC0-1.0 GPL-3 MIT"
 SLOT="0"
 KEYWORDS="amd64"
-IUSE="X waybar +foot +bemenu +fcitx +grim +imv +mpv +rfm wf-recorder +wl-clipboard"
+IUSE="+seatd X waybar +foot +bemenu +fcitx +grim +imv +mpv +rfm wf-recorder +wl-clipboard"
 
 RDEPEND="
 	dev-libs/libinput:=
@@ -60,6 +60,9 @@ RDEPEND="
 	)
 	rfm? (
 		gui-apps/rfm[wayland]
+	)
+	seatd? (
+		sys-auth/seatd[builtin,server,-elogind,-systemd]
 	)
 "
 # gui-apps/wtype::guru
@@ -110,6 +113,10 @@ src_install() {
 
 	else
 		doins dwlstart.sh
+	fi
+
+	if use seatd; then
+		rc-update add seatd default
 	fi
 
 	save_config config.h
