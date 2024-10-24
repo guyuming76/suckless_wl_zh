@@ -15,7 +15,7 @@ HOMEPAGE="https://gitee.com/guyuming76/rfm/"
 LICENSE="MIT"
 KEYWORDS="amd64"
 SLOT="0"
-IUSE="+wayland"
+IUSE="+wayland +locate"
 
 EGIT_SUBMODULES=()
 
@@ -26,6 +26,11 @@ DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/pkgconfig
 	x11-libs/gtk+:3[wayland?]
+"
+RDEPEND="
+	locate? (
+		sys-apps/plocate
+	)
 "
 
 src_prepare() {
