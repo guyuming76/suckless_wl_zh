@@ -59,7 +59,7 @@ RDEPEND="
 		media-fonts/wqy-zenhei
 	)
 	rfm? (
-		gui-apps/rfm
+		gui-apps/rfm[wayland]
 	)
 "
 # gui-apps/wtype::guru

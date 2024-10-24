@@ -14,6 +14,7 @@ DESCRIPTION="suckless style file manager"
 HOMEPAGE="https://gitee.com/guyuming76/rfm/"
 KEYWORDS="amd64"
 LICENSE="MIT"
+IUSE="+wayland"
 SLOT="0"
 EGIT_SUBMODULES=()
 
@@ -23,7 +24,7 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/pkgconfig
-	x11-libs/gtk+:3
+	x11-libs/gtk+:3[wayland?]
 "
 
 src_prepare() {
