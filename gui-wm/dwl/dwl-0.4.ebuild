@@ -65,10 +65,7 @@ RDEPEND="
 	seatd? (
 		sys-auth/seatd[builtin,server,-elogind,-systemd]
 	)
-	media-fonts/wqy-bitmapfont
-	media-fonts/wqy-microhei
-	media-fonts/wqy-unibit
-	media-fonts/wqy-zenhei
+
 "
 # gui-apps/wtype::guru
 # fcitx:5::gentoo-zh
