@@ -40,6 +40,7 @@ RDEPEND="
 	)
 	grim? (
 		gui-apps/grim
+		gui-apps/slurp
 	)
 	imv? (
 		media-gfx/imv
