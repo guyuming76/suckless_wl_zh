@@ -12,4 +12,4 @@ PROPERTIES=live
 RDEPEND=>=dev-libs/glib-2.74
 SLOT=0
 _eclasses_=portability	01f478fa22185b3606f2d4adea4675ed	savedconfig	b9131abe556ad2ea96c01b06d658d363	git-r3	875eb471682d3e1f18da124be97dcc81
-_md5_=c696d00dfc2beff5d5761d6d920375a6
+_md5_=82da4a0ba81cd360bb2ba48cf787cd03

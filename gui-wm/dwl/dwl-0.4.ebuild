@@ -9,7 +9,6 @@ EGIT_REPO_URI="https://gitee.com/guyuming76/dwl"
 EGIT_BRANCH="V0.4"
 WLROOTS_SLOT="0/16"
 
-
 DESCRIPTION="DWL with fcitx5 support"
 HOMEPAGE="https://gitee.com/guyuming76/dwl/"
 

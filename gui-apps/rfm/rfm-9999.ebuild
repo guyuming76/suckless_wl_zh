@@ -12,10 +12,11 @@ fi
 
 DESCRIPTION="suckless style file manager"
 HOMEPAGE="https://gitee.com/guyuming76/rfm/"
-KEYWORDS="amd64"
 LICENSE="MIT"
-IUSE="+wayland"
+KEYWORDS="amd64"
 SLOT="0"
+IUSE="+wayland"
+
 EGIT_SUBMODULES=()
 
 RDEPEND="
