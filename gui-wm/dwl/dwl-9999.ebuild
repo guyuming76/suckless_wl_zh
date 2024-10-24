@@ -52,9 +52,9 @@ RDEPEND="
 		gui-apps/wl-clipboard
 	)
 	fcitx? (
-		app-i18n/fcitx:5
+		app-i18n/fcitx:5[wayland]
 		app-i18n/fcitx-chinese-addons:5
-		app-i18n/fcitx-gtk:5
+		app-i18n/fcitx-gtk:5[wayland]
 		media-fonts/wqy-zenhei
 	)
 	rfm? (
