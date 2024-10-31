@@ -1,4 +1,4 @@
-BDEPEND=virtual/pkgconfig x11-libs/gtk+:3[wayland?] >=dev-vcs/git-1.8.2.1[curl]
+BDEPEND=virtual/pkgconfig x11-libs/gtk+:3[wayland?] app-text/cmark >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=configure install postinst postrm prepare unpack
 DEPEND=>=dev-libs/glib-2.74
 DESCRIPTION=suckless style file manager
@@ -9,7 +9,7 @@ IUSE=+wayland +locate savedconfig
 KEYWORDS=amd64
 LICENSE=MIT
 PROPERTIES=live
-RDEPEND=locate? ( sys-apps/plocate )
+RDEPEND=locate? ( sys-apps/plocate ) dev-vcs/git
 SLOT=0
 _eclasses_=portability	01f478fa22185b3606f2d4adea4675ed	savedconfig	b9131abe556ad2ea96c01b06d658d363	git-r3	875eb471682d3e1f18da124be97dcc81
-_md5_=1630cf462fc97d7e63f1925fc5a78f4a
+_md5_=b09e2c0941815a4da19f9db70b598b61

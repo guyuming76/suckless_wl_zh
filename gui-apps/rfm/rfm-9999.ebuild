@@ -26,11 +26,13 @@ DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/pkgconfig
 	x11-libs/gtk+:3[wayland?]
+	app-text/cmark
 "
 RDEPEND="
 	locate? (
 		sys-apps/plocate
 	)
+	dev-vcs/git
 "
 
 src_prepare() {
