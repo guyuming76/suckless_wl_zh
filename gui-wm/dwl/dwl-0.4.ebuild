@@ -42,7 +42,7 @@ RDEPEND="
 		gui-apps/slurp
 	)
 	imv? (
-		media-gfx/imv
+		media-gfx/imv[wayland,jpeg,png,gif,svg,tiff]
 	)
 	mpv? (
 		media-video/mpv
