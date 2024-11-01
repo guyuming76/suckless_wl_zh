@@ -33,6 +33,12 @@ sync-uri = https://gitee.com/guyuming76/suckless_wl_zh.git
 ```
 然后 `sudo eix-update`(这一步我不确定是否必要)
 
+
+在 gentoo 上运行 rfm, 有时会发现 gdk 函数为 .jpg 图片生成thumbnail失败, 需要在 make.conf 里面加上 jpeg USE flag, 然后
+```
+emerge --ask --verbose --newuse --changed-use --deep @word
+```
+
 # 修改ebuild注意事项 #
 
 1. 使用root权限操作
