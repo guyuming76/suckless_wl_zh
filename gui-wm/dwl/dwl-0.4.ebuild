@@ -12,7 +12,7 @@ WLROOTS_SLOT="0/16"
 DESCRIPTION="DWL with fcitx5 support"
 HOMEPAGE="https://gitee.com/guyuming76/dwl/"
 
-LICENSE="CC0-1.0 GPL-3 MIT"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64"
 IUSE="+seatd X +waybar +foot +bemenu +fcitx +grim +imv +mpv +rfm wf-recorder +wl-clipboard"

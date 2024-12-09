@@ -12,7 +12,7 @@ fi
 
 DESCRIPTION="suckless style file manager"
 HOMEPAGE="https://gitee.com/guyuming76/rfm/"
-LICENSE="MIT"
+LICENSE="GPL-3"
 KEYWORDS="amd64"
 SLOT="0"
 IUSE="+wayland +locate"
