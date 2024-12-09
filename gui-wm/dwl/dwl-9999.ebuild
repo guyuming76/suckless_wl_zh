@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit flag-o-matic savedconfig toolchain-funcs git-r3
+inherit savedconfig git-r3
 
 EGIT_REPO_URI="https://gitee.com/guyuming76/dwl"
 
