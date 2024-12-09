@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit savedconfig git-r3
+inherit savedconfig git-r3 toolchain-funcs
 
 EGIT_REPO_URI="https://gitee.com/guyuming76/dwl"
 EGIT_BRANCH="fixDnD"

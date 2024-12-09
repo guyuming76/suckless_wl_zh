@@ -3,9 +3,11 @@
 
 EAPI=8
 
-inherit savedconfig git-r3
+inherit savedconfig toolchain-funcs git-r3
 
 EGIT_REPO_URI="https://gitee.com/guyuming76/dwl"
+EGIT_BRANCH="fcitx-handwrite"
+WLROOTS_SLOT="0/17"
 
 DESCRIPTION="DWL with fcitx5 support"
 HOMEPAGE="https://gitee.com/guyuming76/dwl/"
@@ -16,6 +18,7 @@ KEYWORDS="~amd64"
 IUSE="+seatd X waybar +foot +bemenu +fcitx +grim +imv +mpv +rfm wf-recorder +wl-clipboard"
 
 RDEPEND="
+	app-i18n/fcitx-handwrite
 	dev-libs/libinput:=
 	dev-libs/wayland
 	gui-libs/wlroots[X(-)?]
