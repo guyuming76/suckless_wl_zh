@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE="+seatd X waybar +foot +bemenu +fcitx +grim +imv +mpv +rfm wf-recorder +wl-clipboard"
 
 RDEPEND="
-	app-i18n/fcitx-handwrite
+	app-i18n/fcitx-handwriting
 	dev-libs/libinput:=
 	dev-libs/wayland
 	gui-libs/wlroots[X(-)?]
