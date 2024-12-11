@@ -13,8 +13,8 @@ fi
 DESCRIPTION="Chinese charactor handwrite input that works with wayland compositor DWL"
 HOMEPAGE="https://gitee.com/guyuming76/fcitx-handwriting"
 LICENSE="GPL-3"
-KEYWORDS="amd64"
 SLOT="0"
+KEYWORDS="amd64"
 
 EGIT_SUBMODULES=()
 

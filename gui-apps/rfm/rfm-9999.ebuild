@@ -13,22 +13,19 @@ fi
 DESCRIPTION="suckless style file manager"
 HOMEPAGE="https://gitee.com/guyuming76/rfm/"
 LICENSE="GPL-3"
-KEYWORDS="amd64"
 SLOT="0"
+KEYWORDS="amd64"
 IUSE="+wayland +locate"
 
 EGIT_SUBMODULES=()
 
-RDEPEND="
-	>=dev-libs/glib-2.74
-"
-DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/pkgconfig
 	x11-libs/gtk+:3[wayland?]
 	app-text/cmark
 "
 RDEPEND="
+	>=dev-libs/glib-2.74
 	locate? (
 		sys-apps/plocate
 	)

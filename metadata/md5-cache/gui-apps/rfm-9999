@@ -1,6 +1,5 @@
 BDEPEND=virtual/pkgconfig x11-libs/gtk+:3[wayland?] app-text/cmark >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=configure install postinst postrm prepare unpack
-DEPEND=>=dev-libs/glib-2.74
 DESCRIPTION=suckless style file manager
 EAPI=8
 HOMEPAGE=https://gitee.com/guyuming76/rfm/
@@ -9,7 +8,7 @@ IUSE=+wayland +locate savedconfig
 KEYWORDS=amd64
 LICENSE=GPL-3
 PROPERTIES=live
-RDEPEND=locate? ( sys-apps/plocate ) dev-vcs/git
+RDEPEND=>=dev-libs/glib-2.74 locate? ( sys-apps/plocate ) dev-vcs/git
 SLOT=0
 _eclasses_=portability	a39e3d646f76cb45d06b44cc1144b8d4	savedconfig	b9131abe556ad2ea96c01b06d658d363	git-r3	875eb471682d3e1f18da124be97dcc81
-_md5_=ffd8a9983e0c3309ac76c0b011244bd0
+_md5_=ac5fed0df024ad5ff74677d6c3878439
