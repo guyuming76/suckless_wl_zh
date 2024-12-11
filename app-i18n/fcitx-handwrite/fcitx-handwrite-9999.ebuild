@@ -23,13 +23,13 @@ RDEPEND="
 	app-i18n/zinnia-tomoe
 	>=dev-libs/glib-2.74
 "
-DEPEND="${RDEPEND}"
+
 BDEPEND="
 	x11-libs/gtk+:3[wayland]
 "
 
 src_install() {
-	default
+	cmake_src_install
 
 	insinto /usr/share/icons/hicolor/scalable/apps/
 	doins theme/fcitx-handwriting.svg
@@ -39,6 +39,8 @@ src_install() {
 }
 
 pkg_postinst() {
+	cmake_pkg_postinst
+
 	mkdir -p /usr/lib/zinnia/model/tomoe/
 	ln -s /usr/lib64/zinnia/model/tomoe/handwriting-zh_CN.model /usr/lib/zinnia/model/tomoe/handwriting-zh_CN.model
 
@@ -47,6 +49,8 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
+	cmake_pkg_postrm
+
 	gtk-update-icon-cache -f /usr/share/icons/hicolor
 	update-desktop-database
 }
