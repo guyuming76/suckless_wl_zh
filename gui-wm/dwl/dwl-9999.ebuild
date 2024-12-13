@@ -3,13 +3,12 @@
 
 EAPI=8
 
-inherit savedconfig toolchain-funcs git-r3 flag-o-matic
+inherit savedconfig git-r3 toolchain-funcs
 
 EGIT_REPO_URI="https://gitee.com/guyuming76/dwl"
 EGIT_BRANCH="fcitx-handwrite"
-WLROOTS_SLOT="0/17"
 
-DESCRIPTION="DWL with fcitx5 support"
+DESCRIPTION="DWL with fcitx5 support and fcitx-handwriting support"
 HOMEPAGE="https://gitee.com/guyuming76/dwl/"
 
 LICENSE="GPL-3"
@@ -17,16 +16,29 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="+seatd X waybar +foot +bemenu +fcitx +grim +imv +mpv +rfm wf-recorder +wl-clipboard"
 
-RDEPEND="
-	app-i18n/fcitx-handwrite
+WLROOTS_DEP="
+	>=gui-libs/wlroots-0.17:=[libinput,session,X?]
+	<gui-libs/wlroots-0.18:=
+"
+
+CDEPEND="
+	${WLROOTS_DEP}
 	dev-libs/libinput:=
 	dev-libs/wayland
-	gui-libs/wlroots[X(-)?]
 	x11-libs/libxkbcommon
 	X? (
 		x11-libs/libxcb:=
 		x11-libs/xcb-util-wm
 	)
+"
+
+
+RDEPEND="
+	${CDEPEND}
+	X? (
+		x11-base/xwayland
+	)
+	app-i18n/fcitx-handwrite
 	bemenu? (
 		dev-libs/bemenu
 	)
@@ -70,9 +82,14 @@ RDEPEND="
 # gui-apps/wtype::guru
 # fcitx:5::gentoo-zh
 
-DEPEND="${RDEPEND}"
+# uses <linux/input-event-codes.h>
+DEPEND="
+	${CDEPEND}
+	sys-kernel/linux-headers
+"
+
 BDEPEND="
-	dev-libs/wayland-protocols
+	>=dev-libs/wayland-protocols-1.32
 	dev-util/wayland-scanner
 	virtual/pkgconfig
 "
@@ -88,9 +105,9 @@ src_configure() {
 
 	sed -i "s:pkg-config:$(tc-getPKG_CONFIG):g" config.mk || die
 
-	if use X; then
-		append-cppflags '-DXWAYLAND'
-		append-libs '-lxcb' '-lxcb-icccm'
+	if ! use X; then
+		sed -i "s:-DXWAYLAND::g" config.mk || die
+		sed -i "s:xcb xcb-icccm::g" config.mk || die
 	fi
 }
 
