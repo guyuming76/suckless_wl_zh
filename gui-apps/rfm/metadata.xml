@@ -6,5 +6,6 @@
 	</maintainer>
 	<use>
 		<flag name="locate">install package for locate command</flag>
+		<flag name="linenoise-ng">install linenoise-ng package as alternative for gnu readline</flag>
 	</use>
 </pkgmetadata>

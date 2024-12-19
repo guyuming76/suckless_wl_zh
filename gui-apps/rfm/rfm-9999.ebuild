@@ -15,7 +15,7 @@ HOMEPAGE="https://gitee.com/guyuming76/rfm/"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64"
-IUSE="+wayland +locate"
+IUSE="+wayland +locate +readline linenoise-ng"
 
 EGIT_SUBMODULES=()
 
@@ -23,6 +23,12 @@ BDEPEND="
 	virtual/pkgconfig
 	x11-libs/gtk+:3[wayland?]
 	app-text/cmark
+	readline? (
+		sys-libs/readline
+	)
+	linenoise-ng? (
+		sys-libs/linenoise-ng
+	)
 "
 RDEPEND="
 	>=dev-libs/glib-2.74
