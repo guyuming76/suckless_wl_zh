@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit savedconfig
+inherit savedconfig xdg-utils
 
 if [[ ${PV} == *9999 ]]; then
 	EGIT_REPO_URI="https://gitee.com/guyuming76/rfm"
@@ -37,6 +37,8 @@ RDEPEND="
 	)
 	dev-vcs/git
 "
+#x11-misc/xdg-utils
+#dev-util/desktop-file-utils
 
 src_prepare() {
 	restore_config config.h
@@ -57,12 +59,19 @@ src_install() {
 	insinto /usr/share/applications
 	doins rfm.desktop
 
+	#xdg-mime default rfm.desktop inode/directory
 }
 
 pkg_postinst() {
-	update-desktop-database
+	xdg_desktop_database_update
+	xdg_mimeinfo_database_update
+	#after install run    xdg-mime query default inode/directory    to check, rfm.desktop should be returned
+	#update-desktop-database
 }
 
 pkg_postrm() {
-	update-desktop-database
+	xdg_desktop_database_update
+	xdg_mimeinfo_database_update
+	#after install run    xdg-mime query default inode/directory    to check, rfm.desktop should NOT be returned
+	#update-desktop-database
 }
