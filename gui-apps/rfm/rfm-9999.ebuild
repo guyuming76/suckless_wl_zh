@@ -56,6 +56,9 @@ src_install() {
 
 	save_config config.h
 
+	insinto /usr/share/icons/hicolor/scalable/apps
+	doins rfm.svg
+
 	insinto /usr/share/applications
 	doins rfm.desktop
 
@@ -63,6 +66,7 @@ src_install() {
 }
 
 pkg_postinst() {
+	gtk-update-icon-cache -f /usr/share/icons/hicolor
 	xdg_desktop_database_update
 	xdg_mimeinfo_database_update
 	#after install run    xdg-mime query default inode/directory    to check, rfm.desktop should be returned
@@ -70,6 +74,7 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
+	gtk-update-icon-cache -f /usr/share/icons/hicolor
 	xdg_desktop_database_update
 	xdg_mimeinfo_database_update
 	#after install run    xdg-mime query default inode/directory    to check, rfm.desktop should NOT be returned
