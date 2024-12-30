@@ -4,11 +4,10 @@ DESCRIPTION=suckless style file manager
 EAPI=8
 HOMEPAGE=https://gitee.com/guyuming76/rfm/
 INHERIT=savedconfig xdg-utils git-r3
-IUSE=+wayland +locate +readline linenoise-ng savedconfig
-KEYWORDS=amd64
+IUSE=+wayland +git +locate +readline linenoise-ng savedconfig
 LICENSE=GPL-3
 PROPERTIES=live
-RDEPEND=>=dev-libs/glib-2.74 locate? ( || ( sys-apps/plocate sys-apps/mlocate ) ) dev-vcs/git
+RDEPEND=>=dev-libs/glib-2.74 locate? ( || ( sys-apps/plocate sys-apps/mlocate ) ) git? ( dev-vcs/git )
 SLOT=0
 _eclasses_=portability	01f478fa22185b3606f2d4adea4675ed	savedconfig	b9131abe556ad2ea96c01b06d658d363	xdg-utils	5465aed08f1dfc2a75f14cbea4272961	git-r3	875eb471682d3e1f18da124be97dcc81
-_md5_=d07a9bcfe58fdb45c2c381f7b1dcf353
+_md5_=8753afff3c1ec280918b9ebc66086e7d

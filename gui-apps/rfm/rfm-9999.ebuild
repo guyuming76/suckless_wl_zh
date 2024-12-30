@@ -14,8 +14,7 @@ DESCRIPTION="suckless style file manager"
 HOMEPAGE="https://gitee.com/guyuming76/rfm/"
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64"
-IUSE="+wayland +locate +readline linenoise-ng"
+IUSE="+wayland +git +locate +readline linenoise-ng"
 
 EGIT_SUBMODULES=()
 
@@ -37,7 +36,9 @@ RDEPEND="
 		sys-apps/mlocate
 		)
 	)
-	dev-vcs/git
+	git? (
+		dev-vcs/git
+	)
 "
 #x11-misc/xdg-utils
 #dev-util/desktop-file-utils
@@ -50,6 +51,14 @@ src_prepare() {
 
 src_configure() {
 	sed -i "s:/local::g" config.mk || die
+	if ! use git; then
+		sed -i "s:-DGitIntegration::g" config.mk || die
+	fi
+
+# Are there any better way to check language setting?
+	if [[ -z "$(locale | grep -i zh_CN)" ]]; then
+		sed -i "s:Chinese.h:English.h:g" config.mk || die
+	fi
 }
 
 src_install() {
