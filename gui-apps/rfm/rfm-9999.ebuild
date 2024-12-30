@@ -32,8 +32,10 @@ BDEPEND="
 "
 RDEPEND="
 	>=dev-libs/glib-2.74
-	locate? (
+	locate? ( || (
 		sys-apps/plocate
+		sys-apps/mlocate
+		)
 	)
 	dev-vcs/git
 "
