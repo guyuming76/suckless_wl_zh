@@ -1,0 +1,5 @@
+app-i18n/fcitx 4.2.5: Fcitx (Flexible Context-aware Input Tool with eXtension) input method framework
+app-i18n/fcitx-handwrite 9999: Chinese charactor handwrite input that works with wayland compositor DWL
+gui-apps/rfm 9999: suckless style file manager
+gui-wm/dwl 0.3.1 0.4 0.5 0.7 9999: DWL with fcitx5 support and fcitx-handwriting support
+sys-libs/linenoise-ng 9999: simple alternative for gnu readline
