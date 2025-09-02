@@ -14,7 +14,7 @@ DESCRIPTION="suckless style file manager"
 HOMEPAGE="https://gitee.com/guyuming76/rfm/"
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="+wayland +git +locate +readline linenoise-ng"
+IUSE="+wayland +git +locate +readline"
 
 EGIT_SUBMODULES=()
 
@@ -24,9 +24,6 @@ BDEPEND="
 	app-text/cmark
 	readline? (
 		sys-libs/readline
-	)
-	linenoise-ng? (
-		sys-libs/linenoise-ng
 	)
 "
 RDEPEND="

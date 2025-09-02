@@ -1,13 +1,13 @@
-BDEPEND=virtual/pkgconfig x11-libs/gtk+:3[wayland?] app-text/cmark readline? ( sys-libs/readline ) linenoise-ng? ( sys-libs/linenoise-ng ) >=dev-vcs/git-1.8.2.1[curl]
+BDEPEND=virtual/pkgconfig x11-libs/gtk+:3[wayland?] app-text/cmark readline? ( sys-libs/readline ) >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=configure install postinst postrm prepare unpack
 DESCRIPTION=suckless style file manager
 EAPI=8
 HOMEPAGE=https://gitee.com/guyuming76/rfm/
 INHERIT=savedconfig xdg-utils git-r3
-IUSE=+wayland +git +locate +readline linenoise-ng savedconfig
+IUSE=+wayland +git +locate +readline savedconfig
 LICENSE=GPL-3
 PROPERTIES=live
 RDEPEND=>=dev-libs/glib-2.74 locate? ( || ( sys-apps/plocate sys-apps/mlocate ) ) git? ( dev-vcs/git )
 SLOT=0
 _eclasses_=portability	a39e3d646f76cb45d06b44cc1144b8d4	savedconfig	b9131abe556ad2ea96c01b06d658d363	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	git-r3	875eb471682d3e1f18da124be97dcc81
-_md5_=8753afff3c1ec280918b9ebc66086e7d
+_md5_=16691e9b24ebc8231f05dbdf4b375de6
