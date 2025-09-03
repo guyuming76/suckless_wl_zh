@@ -5,6 +5,12 @@ EAPI=8
 
 inherit savedconfig xdg-utils
 
+#`cargo.eclass` 包含一个关键函数 `cargo_gen_config`，它会在构建过程中被调用。这个函数的作用是：
+#1.  **检查系统环境中是否已经存在可用的、版本足够的 `rustc` 和 `cargo`**。
+#2.  如果存在，就生成一个指向系统现有工具链的 Cargo 配置文件（通常在 `~/.cargo/config.toml`），并**直接使用它**。
+#3.  如果不存在，或者版本太旧，它才会**回退到使用通过 `BDEPEND` 声明的 Gentoo 包**（如 `virtual/rust`）。
+#这意味着，只要用户系统里有任何可用的 Rust（无论是 Gentoo 安装的还是 `rustup` 安装的），`cargo.eclass` 都会优先使用它。
+
 if [[ ${PV} == *9999 ]]; then
 	EGIT_REPO_URI="https://gitee.com/guyuming76/rfm"
 	inherit git-r3
@@ -14,7 +20,7 @@ DESCRIPTION="suckless style file manager"
 HOMEPAGE="https://gitee.com/guyuming76/rfm/"
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="+wayland +git +locate +readline"
+IUSE="+wayland +git +locate +reedline"
 
 EGIT_SUBMODULES=()
 
@@ -22,9 +28,8 @@ BDEPEND="
 	virtual/pkgconfig
 	x11-libs/gtk+:3[wayland?]
 	app-text/cmark
-	readline? (
-		sys-libs/readline
-	)
+	sys-libs/readline
+	dev-libs/json-glib
 "
 RDEPEND="
 	>=dev-libs/glib-2.74
@@ -51,11 +56,17 @@ src_configure() {
 	if ! use git; then
 		sed -i "s:-DGitIntegration::g" config.mk || die
 	fi
-
+	if ! use reedline; then
+		sed -i "s:-Dreedline:-DGNU_readline:g" config.mk || die
+	fi
 # Are there any better way to check language setting?
 	if [[ -z "$(locale | grep -i zh_CN)" ]]; then
 		sed -i "s:Chinese.h:English.h:g" config.mk || die
 	fi
+}
+
+src_compile() {
+    emake -j1
 }
 
 src_install() {
