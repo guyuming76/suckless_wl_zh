@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit savedconfig xdg-utils
+inherit savedconfig xdg-utils cargo
 
 #`cargo.eclass` 包含一个关键函数 `cargo_gen_config`，它会在构建过程中被调用。这个函数的作用是：
 #1.  **检查系统环境中是否已经存在可用的、版本足够的 `rustc` 和 `cargo`**。
@@ -20,8 +20,8 @@ DESCRIPTION="suckless style file manager"
 HOMEPAGE="https://gitee.com/guyuming76/rfm/"
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="+wayland +git +locate +reedline"
-
+IUSE="+debug +wayland +git +locate +reedline"
+REQUIRED_USE="debug"
 EGIT_SUBMODULES=()
 
 BDEPEND="
@@ -30,6 +30,11 @@ BDEPEND="
 	app-text/cmark
 	sys-libs/readline
 	dev-libs/json-glib
+	reedline? ( || (
+		dev-lang/rust
+		dev-lang/rust-bin
+		)
+	)
 "
 RDEPEND="
 	>=dev-libs/glib-2.74
@@ -42,8 +47,17 @@ RDEPEND="
 		dev-vcs/git
 	)
 "
+
 #x11-misc/xdg-utils
 #dev-util/desktop-file-utils
+export CalledByEbuild="YES"
+
+src_unpack() {
+	git-r3_src_unpack
+	if use reedline; then
+		S="${S}/reedline_wrapper" cargo_live_src_unpack
+	fi
+}
 
 src_prepare() {
 	restore_config config.h
@@ -52,6 +66,8 @@ src_prepare() {
 }
 
 src_configure() {
+	#cargo_gen_config
+
 	sed -i "s:/local::g" config.mk || die
 	if ! use git; then
 		sed -i "s:-DGitIntegration::g" config.mk || die
@@ -60,17 +76,26 @@ src_configure() {
 		sed -i "s:-Dreedline:-DGNU_readline:g" config.mk || die
 	fi
 # Are there any better way to check language setting?
-	if [[ -z "$(locale | grep -i zh_CN)" ]]; then
-		sed -i "s:Chinese.h:English.h:g" config.mk || die
+        if [[ -z "$(locale | grep -i zh_CN)" ]]; then
+                sed -i "s:Chinese.h:English.h:g" config.mk || die
 	fi
 }
 
 src_compile() {
-    emake -j1
+    # 如果使用 reedline，先构建 Rust 部分
+    if use reedline; then
+        pushd reedline_wrapper >/dev/null || die
+        cargo_src_compile
+        popd >/dev/null || die
+        pushd rfmReedline >/dev/null || die
+	cargo_src_compile
+        popd >/dev/null || die
+    fi
+    # 然后构建 C 部分
+    emake
 }
 
 src_install() {
-	export CalledByEbuild="YES"
 	default
 
 	save_config config.h
@@ -80,6 +105,9 @@ src_install() {
 
 	insinto /usr/share/applications
 	doins rfm.desktop
+
+	insinto /usr/include
+	doins rfm_addon.h
 
 	#xdg-mime default rfm.desktop inode/directory
 }
