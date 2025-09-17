@@ -85,7 +85,8 @@ src_compile() {
     # 如果使用 reedline，先构建 Rust 部分
     if use reedline; then
         pushd reedline_wrapper >/dev/null || die
-        cargo_src_compile
+	#需版本号环境变量，build.rs中用来建立符号链接
+        RFM_VERSION="${VERSION}" cargo_src_compile
         popd >/dev/null || die
         pushd rfmReedline >/dev/null || die
 	cargo_src_compile
