@@ -9,4 +9,7 @@
 		<flag name="reedline">install reedline (rust) in addition to gnu readline</flag>
 		<flag name="git">build rfm with git integration feature</flag>
 	</use>
+	<upstream>
+		<remote-id type="github">guyuming76/rfm</remote-id>
+	</upstream>
 </pkgmetadata>

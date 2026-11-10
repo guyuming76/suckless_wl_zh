@@ -12,12 +12,20 @@ inherit savedconfig xdg-utils cargo
 #这意味着，只要用户系统里有任何可用的 Rust（无论是 Gentoo 安装的还是 `rustup` 安装的），`cargo.eclass` 都会优先使用它。
 
 if [[ ${PV} == *9999 ]]; then
-	EGIT_REPO_URI="https://gitee.com/guyuming76/rfm"
+	# gitee 现在对匿名 https git 一律返回 401（要登录），所以主源换成 github 镜像，
+	# gitee 只作为配了凭据时的回退。
+	# github 上的默认分支就是开发分支 autoWithTitle，这里显式写出来：万一哪天
+	# 默认分支被切到老的 master，也不会静默构建成旧代码。
+	EGIT_REPO_URI="
+		https://github.com/guyuming76/rfm.git
+		https://gitee.com/guyuming76/rfm
+	"
+	EGIT_BRANCH="autoWithTitle"
 	inherit git-r3
 fi
 
 DESCRIPTION="suckless style file manager"
-HOMEPAGE="https://gitee.com/guyuming76/rfm/"
+HOMEPAGE="https://github.com/guyuming76/rfm"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE="+debug +wayland +git +locate +reedline"
