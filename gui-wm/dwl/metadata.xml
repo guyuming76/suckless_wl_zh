@@ -6,6 +6,7 @@
 	</maintainer>
 	<use>
 		<flag name="X">build with xwayland (rootless; 与 Xwayland.sh 的 rootful 模式互斥)</flag>
+		<flag name="waybar">install waybar 配置（只有 dwl-0.7 及更老的 ebuild 还支持，0.9 起上游已去掉）</flag>
 		<flag name="foot">install foot terminal emulator</flag>
 		<flag name="bemenu">install bemenu</flag>
 		<flag name="wmenu">install wmenu (wayland dmenu)</flag>

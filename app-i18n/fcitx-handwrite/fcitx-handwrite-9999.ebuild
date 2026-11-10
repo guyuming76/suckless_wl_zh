@@ -6,12 +6,20 @@ EAPI=8
 inherit cmake
 
 if [[ ${PV} == *9999 ]]; then
-	EGIT_REPO_URI="https://gitee.com/guyuming76/fcitx-handwriting"
+	# gitee 匿名 git 已被要求登录，主源用 codeberg 镜像（注意仓库名是 fcitx-handwrite，
+	# 比 gitee 上的 fcitx-handwriting 少个 ing），gitee 作回退。
+	# 分支必须显式指定：只有 work_with_rfm_grepMatch 带 theme/fcitx-handwriting.{svg,desktop}
+	# 这两个 src_install 要装的文件（codeberg 的默认分支也正是它）。
+	EGIT_REPO_URI="
+		https://codeberg.org/guyuming76/fcitx-handwrite.git
+		https://gitee.com/guyuming76/fcitx-handwriting.git
+	"
+	EGIT_BRANCH="work_with_rfm_grepMatch"
 	inherit git-r3
 fi
 
 DESCRIPTION="Chinese charactor handwrite input that works with wayland compositor DWL"
-HOMEPAGE="https://gitee.com/guyuming76/fcitx-handwriting"
+HOMEPAGE="https://codeberg.org/guyuming76/fcitx-handwrite"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64"

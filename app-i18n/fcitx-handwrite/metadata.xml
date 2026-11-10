@@ -4,4 +4,7 @@
 	<maintainer type="person">
 		<email>gu_yu_ming@139.com</email>
 	</maintainer>
+	<upstream>
+		<remote-id type="codeberg">guyuming76/fcitx-handwrite</remote-id>
+	</upstream>
 </pkgmetadata>

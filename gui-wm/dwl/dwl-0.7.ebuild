@@ -5,8 +5,14 @@ EAPI=8
 
 inherit savedconfig git-r3 toolchain-funcs
 
-EGIT_REPO_URI="https://gitee.com/guyuming76/dwl"
+# gitee 现在对匿名 https git 一律返回 401（要登录），主源改用 codeberg 镜像，gitee 作回退。
+EGIT_REPO_URI="
+	https://codeberg.org/guyuming76/dwl.git
+	https://gitee.com/guyuming76/dwl
+"
 EGIT_BRANCH="0.7cn"
+# 0.7cn 把 cheatsheet 做成了子模块，URL 指向 gitee（匿名取不到）；这个 ebuild 用不到它，跳过。
+EGIT_SUBMODULES=()
 
 DESCRIPTION="DWL with fcitx5 support"
 HOMEPAGE="https://gitee.com/guyuming76/dwl/"
