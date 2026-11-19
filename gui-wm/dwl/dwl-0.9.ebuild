@@ -21,7 +21,11 @@ HOMEPAGE="https://gitee.com/guyuming76/dwl/"
 LICENSE="CC0-1.0 GPL-3+ MIT"
 SLOT="0"
 KEYWORDS="amd64"
-IUSE="+seatd X +foot +wmenu +fcitx +handwrite +grim +imv +mpv +rfm wf-recorder +wl-clipboard xwlclip"
+# handwrite / rfm 默认关闭：
+#   handwrite 要拉 app-i18n/fcitx-handwrite（外加 zinnia 模型），属于实验性功能；
+#   rfm 是 git live 包（gui-apps/rfm-9999），在稳定 amd64 上会被 keyword 掉，
+#   开着它会让 `emerge dwl` 直接卡在 "masked by: missing keyword"。
+IUSE="+seatd X +foot +wmenu +fcitx handwrite +grim +imv +mpv rfm wf-recorder +wl-clipboard xwlclip"
 
 # 0.9_guyuming 的 config.mk 里硬编码了 wlroots-0.20（不再像 0.7cn 那样用 wlroots-0.18）
 WLROOTS_DEP="
@@ -86,7 +90,7 @@ RDEPEND="
 	)
 "
 # gui-apps/wtype::guru
-# fcitx:5::gentoo-zh
+# fcitx:5 现在由 ::gentoo 提供（5.1.17/5.1.21 为 amd64 stable），不再需要 gentoo-zh
 
 # uses <linux/input-event-codes.h>
 DEPEND="
