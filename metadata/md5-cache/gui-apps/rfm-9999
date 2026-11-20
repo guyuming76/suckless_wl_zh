@@ -1,14 +1,15 @@
-BDEPEND=virtual/pkgconfig x11-libs/gtk+:3[wayland?] app-text/cmark sys-libs/readline dev-libs/json-glib reedline? ( || ( dev-lang/rust dev-lang/rust-bin ) ) || ( >=dev-lang/rust-bin-1.90.0:* >=dev-lang/rust-1.90.0:* ) >=dev-vcs/git-1.8.2.1[curl]
-DEFINED_PHASES=compile configure install postinst postrm prepare setup test unpack
+BDEPEND=virtual/pkgconfig reedline? ( || ( dev-lang/rust dev-lang/rust-bin ) ) >=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=compile configure install postinst postrm prepare setup unpack
+DEPEND=app-text/cmark dev-lang/python >=dev-libs/glib-2.74 dev-libs/json-glib sys-libs/readline x11-libs/gtk+:3[wayland?]
 DESCRIPTION=suckless style file manager
 EAPI=8
 HOMEPAGE=https://github.com/guyuming76/rfm
-INHERIT=savedconfig xdg-utils cargo git-r3
-IUSE=+debug +wayland +git +locate +reedline savedconfig debug
+INHERIT=desktop savedconfig xdg-utils cargo git-r3
+IUSE=+debug +wayland +git +locate gnu-readline reedline +prompt-toolkit savedconfig debug
 LICENSE=GPL-3
 PROPERTIES=live
-RDEPEND=>=dev-libs/glib-2.74 locate? ( || ( sys-apps/plocate sys-apps/mlocate ) ) git? ( dev-vcs/git )
-REQUIRED_USE=debug
+RDEPEND=>=dev-libs/glib-2.74 app-text/cmark dev-lang/python dev-libs/json-glib dev-util/desktop-file-utils dev-util/gtk-update-icon-cache sys-libs/readline x11-libs/gtk+:3[wayland?] x11-misc/xdg-utils locate? ( || ( sys-apps/plocate sys-apps/mlocate ) ) git? ( dev-vcs/git ) prompt-toolkit? ( dev-python/prompt-toolkit )
+REQUIRED_USE=debug ^^ ( gnu-readline reedline prompt-toolkit )
 SLOT=0
-_eclasses_=portability	3c2334cdfbb30bc4b33c85164fe832bf	savedconfig	b9131abe556ad2ea96c01b06d658d363	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	toolchain-funcs	58a918e3a42d0156f010dcfd43725be5	flag-o-matic	fd3558f73f6503093adee69adf41020d	multiprocessing	45d0620f25c2f063ad6276ecd9ed9399	rust	552cca5ca7af2571f710cc2177327f0a	rust-toolchain	76468983281b0a7fc167ca224f84ecfd	cargo	bff30f59ca59b09857b787ac644b2e4c	git-r3	e6c2f983e006e805160436c75a0c1562
-_md5_=b1c62aad2c5c1184ad89afd406cdfa0b
+_eclasses_=desktop	e447b5f77146d69797e9f03ff177f3f1	portability	3c2334cdfbb30bc4b33c85164fe832bf	savedconfig	b9131abe556ad2ea96c01b06d658d363	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	toolchain-funcs	58a918e3a42d0156f010dcfd43725be5	flag-o-matic	fd3558f73f6503093adee69adf41020d	multiprocessing	45d0620f25c2f063ad6276ecd9ed9399	rust	552cca5ca7af2571f710cc2177327f0a	rust-toolchain	76468983281b0a7fc167ca224f84ecfd	cargo	bff30f59ca59b09857b787ac644b2e4c	git-r3	e6c2f983e006e805160436c75a0c1562
+_md5_=b40c5e308ab85a99c8176c6c74edd91e

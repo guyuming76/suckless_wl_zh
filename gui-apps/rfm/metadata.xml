@@ -4,9 +4,17 @@
 	<maintainer type="person">
 		<email>gu_yu_ming@139.com</email>
 	</maintainer>
+	<longdescription>
+		rfm 的行编辑后端由上游 config.mk 的 READLINE_LIB 决定，对应三个互斥的
+		USE flag：gnu-readline、reedline、prompt-toolkit（REQUIRED_USE 用 ^^
+		保证有且只有一个被启用）。默认 prompt-toolkit，与上游 autoWithTitle
+		分支的默认值一致。
+	</longdescription>
 	<use>
+		<flag name="gnu-readline">用 sys-libs/readline 作为命令行输入后端（READLINE_LIB = -DGNU_readline）：不需要 Rust 和 Python prompt_toolkit，但没有多行编辑和方向键交互菜单</flag>
+		<flag name="reedline">用 Rust nushell reedline 作为命令行输入后端（READLINE_LIB = -Dreedline）：需要 Rust 工具链（dev-lang/rust-bin 或 dev-lang/rust），要联网 vendor 两个 crate 的依赖</flag>
+		<flag name="prompt-toolkit">用嵌入式 Python 的 prompt_toolkit 作为命令行输入后端（READLINE_LIB = -Dprompt_toolkit，默认）：需要 dev-lang/python 与 dev-python/prompt-toolkit</flag>
 		<flag name="locate">install package for locate command</flag>
-		<flag name="reedline">install reedline (rust) in addition to gnu readline</flag>
 		<flag name="git">build rfm with git integration feature</flag>
 	</use>
 	<upstream>
