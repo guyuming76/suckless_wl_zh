@@ -11,5 +11,5 @@ PROPERTIES=live
 RDEPEND=>=dev-libs/glib-2.74 app-text/cmark dev-lang/python dev-libs/json-glib dev-util/desktop-file-utils dev-util/gtk-update-icon-cache sys-libs/readline x11-libs/gtk+:3[wayland?] x11-misc/xdg-utils locate? ( || ( sys-apps/plocate sys-apps/mlocate ) ) git? ( dev-vcs/git ) prompt-toolkit? ( dev-python/prompt-toolkit )
 REQUIRED_USE=debug ^^ ( gnu-readline reedline prompt-toolkit )
 SLOT=0
-_eclasses_=desktop	e447b5f77146d69797e9f03ff177f3f1	portability	3c2334cdfbb30bc4b33c85164fe832bf	savedconfig	b9131abe556ad2ea96c01b06d658d363	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	toolchain-funcs	58a918e3a42d0156f010dcfd43725be5	flag-o-matic	fd3558f73f6503093adee69adf41020d	multiprocessing	45d0620f25c2f063ad6276ecd9ed9399	rust	552cca5ca7af2571f710cc2177327f0a	rust-toolchain	76468983281b0a7fc167ca224f84ecfd	cargo	bff30f59ca59b09857b787ac644b2e4c	git-r3	e6c2f983e006e805160436c75a0c1562
-_md5_=b40c5e308ab85a99c8176c6c74edd91e
+_eclasses_=desktop	e447b5f77146d69797e9f03ff177f3f1	portability	3c2334cdfbb30bc4b33c85164fe832bf	savedconfig	b9131abe556ad2ea96c01b06d658d363	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	toolchain-funcs	58a918e3a42d0156f010dcfd43725be5	flag-o-matic	fd3558f73f6503093adee69adf41020d	multiprocessing	45d0620f25c2f063ad6276ecd9ed9399	rust	d2da4aa614adc34eea872ca9a6173d0a	rust-toolchain	76468983281b0a7fc167ca224f84ecfd	cargo	f37054abdadccfe8287ecf965ef5748f	git-r3	e6c2f983e006e805160436c75a0c1562
+_md5_=5b47b9c793a18225aa1cfb8d735c5970

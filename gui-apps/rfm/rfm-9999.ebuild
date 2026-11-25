@@ -208,11 +208,6 @@ src_compile() {
 }
 
 src_install() {
-	# 上游 Makefile 里写的是 `cp -f rfm_addon.h ${DESTDIR}${PREFIX}/include`
-	# （没有尾斜杠，也没先 mkdir），在干净的 image 里会把 include 变成一个文件，
-	# 于是随后的 `insinto /usr/include` 会报 "文件已存在"。这里先把目录建出来。
-	dodir /usr/include
-
 	default
 
 	save_config config.h
